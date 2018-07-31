@@ -6,7 +6,7 @@
 /*   By: khou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 11:46:43 by khou              #+#    #+#             */
-/*   Updated: 2018/07/19 10:37:59 by khou             ###   ########.fr       */
+/*   Updated: 2018/07/30 17:15:09 by khou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,6 @@ static int	ft_store_word(const char *str, int i, char **ret, char c)
 	return (skip + len);
 }
 
-static int	ft_number_of_words(const char *str, int i, char c)
-{
-	while (*str == c)
-		str++;
-	while (*str)
-	{
-		while (*str && *str != c)
-			str++;
-		while (*str == c)
-			str++;
-		i++;
-	}
-	return (i);
-}
-
 char		**ft_strsplit(char const *s, char c)
 {
 	int		len;
@@ -58,7 +43,7 @@ char		**ft_strsplit(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	nw = ft_number_of_words(s, 0, c);
+	nw = ft_count_nbr_block(s, c);
 	ret = (char **)ft_memalloc((nw + 1) * sizeof(char *));
 	if (!ret)
 		return (0);

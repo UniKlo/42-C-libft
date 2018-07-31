@@ -6,7 +6,7 @@
 /*   By: khou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 13:34:02 by khou              #+#    #+#             */
-/*   Updated: 2018/07/19 10:39:58 by khou             ###   ########.fr       */
+/*   Updated: 2018/07/30 19:02:00 by khou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strtrim(char const *s)
 	int		clean;
 	char	*ret;
 
-	while (*s && ft_isspace(*s))
+	if (!s)
+		return (NULL);
+	while (ft_isspace(*s))
 		s++;
 	clean = ft_strlen(s);
 	while (clean > 0 && ft_isspace(s[clean - 1]))

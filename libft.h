@@ -6,9 +6,11 @@
 /*   By: khou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 21:41:13 by khou              #+#    #+#             */
-/*   Updated: 2018/07/19 17:57:59 by khou             ###   ########.fr       */
+/*   Updated: 2018/07/30 21:37:01 by khou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//still need one more function for extra
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -112,6 +114,7 @@ char			*ft_strrev(char *str);
 void			*ft_realloc(void *src, size_t srcsize, size_t newsize);
 char			*ft_strcjoin(char *delim, char **arr, size_t size);
 void			ft_printjoin(char *delim, char **arr, size_t size);
+int				ft_count_nbr_block(const char *str, char c);
 
 /*
 ** List
